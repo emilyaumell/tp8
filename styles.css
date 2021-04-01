@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap');
+
+
+img#steakpic {
+  width: 60%;
+  height: 60%;
+  padding: 10px;
+  border: 2px dashed black;
+  margin-bottom: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}
+
+#pic {
+  width: 60%;
+  height: auto;
+  padding: 10px;
+  border: 2px dashed black;
+  margin-bottom: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+div.recipeBlock {
+  width: 100vw;
+  display: inline-block;
+  float: center;
+  padding: 1vw;
+  padding-bottom: 2vw;
+  padding-left: 2vw;
+  border: 2px dashed black;
+  vertical-align: top;
+  
+}
+
+#ingredients {
+  clear: left;
+  padding-left: 2vw;
+  background-color: white;
+}
+
+#equipment {
+  background-color: white;
+  padding-left: 2vw;
+}
+
+#directions {
+  background-color: white;
+}
+
+li {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#nav {
+  background-color: maroon;
+  text-align: center;
+}
+
+#nav a {
+  color: white;
+  font-family: 'Fugaz One', cursive;
+  font-size: 25px;
+  padding-right: 2px;
+}
+
+#title h3 {
+  font-family: 'Fugaz One', cursive;
+  font-size: 20px;
+  text-align: center;
+}
+
+#title h1 {
+  font-family: 'Fugaz One', cursive;
+  font-size: 35px;
+  transition: font-size 1.5s;
+  color: maroon;
+  text-shadow: 2px 2px 4px gainsboro;
+  letter-spacing: 2px;
+  padding: 15px;
+  border: 2px dashed black;
+  text-align: center;
+  background-color: white;
+}
+
+h4 {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+#title p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+}
+
+.links {
+  color: black;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.description {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600 ;
+  transition: font-size 1.5s;
+  margin-bottom: 40px;
+  text-align: center;
+  padding-right:10vw;
+  padding-left: 10vw;
+}
+
+body {
+  background-color: lightyellow;
+  transition: background-color 1.5s;
+}
+
+.links {
+  text-align: center;
+}
+
+/* CSS added for JS addition ************************ */
+
+#title.biggerHeadline h1 {
+  font-size: 80px;
+}
+
+.clicked { 
+  color: black;
+  background-color: LavenderBlush;
+  border: 5px solid black;
+}
+
+#ingredients.ing ul {
+  visibility: hidden;
+}
+
+#equipment.kit ul {
+  visibility: hidden;
+}
+
+#directions.dir ol {
+  visibility: hidden;
+}
+
+
+/* media queries *************************** */
+
+@media screen and (min-width: 575px) {
+  
+  body {
+    background-color: lightcyan;
+  }
+  
+}
+
+/* from the demo on responsive design */
+@media (orientation: landscape) {
+  
+  div.recipeBlock {
+    width: calc(100vw/3 - 2vw);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    font-size: 60px;
+  }
+  
+  .description {
+    font-size: 20px;
+  }
+  
+}
+

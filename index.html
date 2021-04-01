@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<!-- meta tags and title -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sirloin Steak with Garlic Butter</title>
+
+  <!-- external JavaScript -->
+	<script type="text/javascript" src="scripts.js" defer></script>
+  
+	<!-- external and internal CSS -->
+	<link rel="stylesheet" href="styles.css" media="all">
+	
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap');
+
+  
+  
+
+* {
+  box-sizing: border-box;
+}
+
+div.recipeBlock {
+  width: 100vw;
+  display: inline-block;
+  float: center;
+  padding: 1vw;
+  padding-bottom: 2vw;
+  padding-left: 2vw;
+  border: 2px dashed black;
+  vertical-align: top;
+  
+}
+
+#ingredients {
+  clear: left;
+  padding-left: 2vw;
+  background-color: white;
+}
+
+#equipment {
+  background-color: white;
+  padding-left: 2vw;
+}
+
+#directions {
+  background-color: white;
+}
+
+li {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+  font-family: 'Fugaz One', cursive;
+  font-size: 35px;
+  transition: font-size 1.5s;
+  color: maroon;
+  text-shadow: 2px 2px 4px gainsboro;
+  letter-spacing: 2px;
+  padding: 15px;
+  border: 2px dashed black;
+  text-align: center;
+  background-color: white;
+}
+
+h4 {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+}
+
+.links {
+  color: black;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.description {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600 ;
+  transition: font-size 1.5s;
+  margin-bottom: 40px;
+  text-align: center;
+  padding-right:10vw;
+  padding-left: 10vw;
+}
+
+body {
+  background-color: lightyellow;
+  transition: background-color 1.5s;
+}
+
+.links {
+  text-align: center;
+}
+
+.biggerHeadline {
+  font-size: 80px;
+}
+
+.clicked { 
+  color: black;
+  background-color: LavenderBlush;
+  border: 5px solid black;
+}
+
+#ingredients.ing ul {
+  visibility: hidden;
+}
+
+#equipment.kit ul {
+  visibility: hidden;
+}
+
+#directions.dir ol {
+  visibility: hidden;
+}  
+
+  
+/* media queries *************************** */
+
+@media screen and (min-width: 575px) {
+  
+  body {
+    background-color: lightcyan;
+  }
+  
+}
+
+/* from the demo on responsive design */
+@media (orientation: landscape) {
+  
+  div.recipeBlock {
+    width: calc(100vw/3 - 2vw);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    font-size: 60px;
+  }
+  
+  .description {
+    font-size: 20px;
+  }
+  
+}
+
+
+/* media queries *************************** */
+
+@media screen and (min-width: 575px) {
+  
+  body {
+    background-color: lightcyan;
+  }
+  
+}
+
+/* from the demo on responsive design */
+@media (orientation: landscape) {
+  
+  div.recipeBlock {
+    width: calc(100vw/3 - 2vw);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    font-size: 60px;
+  }
+  
+  .description {
+    font-size: 20px;
+  }
+  
+}
+    
+	</style>
+
+  
+	<!-- external and internal JavaScript -->
+	<script src="scripts.js" defer></script>
+	<script>
+		// in-page JavaScript here  
+	</script>
+
+</head>
+
+  
+<body>
+  
+<div id="nav">
+		<a href="#" onclick="SteakButter.displayRecipe();">Sirloin Steak with Garlic Butter</a>
+		<a href="#" onclick="LasagnaBest.displayRecipe();">Worlds Best Lasagna</a>
+    <a href="#" onclick="SoftPretzels.displayRecipe();">Soft Pretzels</a>
+	</div>
+
+<div id="title">
+   <h1></h1>
+   <h3></h3>
+</div>
+
+<!-- <p class="description">I have never tasted any other steak that came even close to the ones made with this recipe. If you are having steak, don't skimp on flavor to save a few calories. The butter makes this steak melt in your mouth wonderful.</p> -->
+
+
+  <img src="" id="steakpic">
+  <!-- https://images.unsplash.com/photo-1579366948929-444eb79881eb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1400&q=80 -->
+
+<div id="masterblock">
+  
+<div id="ingredients" class="recipeBlock">
+</div>
+
+<div id="equipment" class="recipeBlock">
+</div>
+
+<div id="directions" class="recipeBlock">
+</div>
+
+  </div>
+  
+<p class="links">(Original recipe at <a href="https://www.allrecipes.com/recipe/14554/sirloin-steak-with-garlic-butter/?internalSource=hub%20recipe&referringContentType=Search">AllRecipes.com</a> | Photo Sourced from <a href="https://unsplash.com/photos/c3mFafsFz2w">Unsplash.com</a>.)</p>
+  
+</body>
+</html>
