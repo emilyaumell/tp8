@@ -26,7 +26,7 @@ function loadFileInto(fromIdentifier, fromList) {
        
         // figure out querySelector target
         whereTo = "#" + fromList + " ul";
-        if (fromList == "directions") whereTo = "#" + " ol";
+        if (fromList == "directions") whereTo = "#" + fromList + " ol";
 				document.querySelector(whereTo).innerHTML = responseHTML;
 				
 			} else if ((this.readyState == 4) && (this.status != 200)) {
@@ -88,9 +88,7 @@ LasagnaBest = new Recipe(
     "Worlds Best Lasagna",
     "https://cdn.pixabay.com/photo/2017/02/15/15/17/meal-2069021_1280.jpg",
     "Madison Roby",
-    "lasag-ingredients.html",
-    "lasag-equipment.html",
-    "lasag-directions.html"
+    "LasagnaBest"
  );
   
   
@@ -98,9 +96,7 @@ SoftPretzels = new Recipe(
     "Soft Pretzels",
     "https://www.billyparisi.com/wp-content/uploads/2020/03/pretzels-1.jpg",
     "Kristine Zorn",
-    "pret-ingredients.html",
-    "pret-equipment.html",
-    "pret-directions.html"
+    "SoftPretzels"
  );
   
 	
