@@ -1,18 +1,33 @@
 // change font size using window onload event
+
 // generic AJAX function to load fromFile into object with ID whereTo (TP#6)
-function loadFileInto(fromFile, whereTo) {
+function loadFileInto(fromIdentifier, fromList) {
 
 	// creating a new XMLHttpRequest object
 	ajax = new XMLHttpRequest();
 
+  // define the fromFile value based on PHP URL
+  fromFile = "recipes.php?id=" + fromIdentifier + "&list=" + fromList
+  
 	// defines the GET/POST method, source, and async value of the AJAX object
 	ajax.open("GET", fromFile, true);
 
 	// prepares code to do something in response to the AJAX request
 	ajax.onreadystatechange = function() {
 		
-			if ((this.readyState == 4) && (this.status == 200)) {
-				document.getElementById(whereTo).innerHTML = this.responseText;
+			if ((this.readyState == 4) && (this.status == 200)) {   
+        
+        // convert received JSON from PHP into a JavaScript array
+        responseArray = JSON.parse(this.responseText);
+        responseHTML = "";
+        for (x = 0; x < responseArray.length; x++) {
+          responseHTML += "<li>" + responseArray[x] + "</li>";
+        }
+       
+        // figure out querySelector target
+        whereTo = "#" + fromList + " ul";
+        if (fromList == "directions") whereTo = "#" + " ol";
+				document.querySelector(whereTo).innerHTML = responseHTML;
 				
 			} else if ((this.readyState == 4) && (this.status != 200)) {
 				console.log("Error: " + this.responseText);
@@ -30,13 +45,12 @@ window.onload = function() {
   
 
 	// object constructor for Recipe prototype
-function Recipe(recipeName, imageURL, contributorName, ingredientFilename, equipmentFilename, directionsFilename) {
+function Recipe(recipeName, imageURL, contributorName, recipeIdentifier) {
 	this.name = recipeName;
 	this.imgsrc = imageURL;
 	this.contributor = contributorName;
-	this.ingFile = ingredientFilename;
-	this.equipFile = equipmentFilename;
-	this.dirFile = directionsFilename;
+	this.identifier = recipeIdentifier;
+
 	
 	// update the screen with this object's recipe information
 	this.displayRecipe = function() {
@@ -54,9 +68,9 @@ function Recipe(recipeName, imageURL, contributorName, ingredientFilename, equip
     
     
 		// update the 3 columns of information
-		loadFileInto(this.ingFile, "ingredients");
-		loadFileInto(this.equipFile, "equipment");
-		loadFileInto(this.dirFile, "directions");
+		loadFileInto(this.identifier, "ingredients");
+		loadFileInto(this.identifier, "equipment");
+		loadFileInto(this.identifier, "directions");
 		
 	}	
   
@@ -66,9 +80,7 @@ function Recipe(recipeName, imageURL, contributorName, ingredientFilename, equip
     "Sirloin Steak with Garlic Butter",
     "https://images.unsplash.com/photo-1579366948929-444eb79881eb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     "Emily Aumell",
-    "ingredients.html",
-    "equipment.html",
-    "directions.html"
+    "SteakButter"
  );
   
   
